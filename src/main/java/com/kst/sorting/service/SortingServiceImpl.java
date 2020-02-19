@@ -4,7 +4,10 @@ import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
+
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -53,7 +56,8 @@ public class SortingServiceImpl implements SortingService {
 	@Override
 	public List<ModelName> sortingFunctionNameAsc(List<ModelName> data) {
 		// TODO Auto-generated method stub
-		 data.sort((ModelName m1, ModelName m2) -> m1.getLastName().compareTo(m2.getLastName()));
+		 data.stream().sorted(Comparator.comparing(ModelName::getLastName).thenComparing(ModelName::getFirstName))
+         .collect(Collectors.toList());
 		 return data;
 	}
 
