@@ -53,7 +53,7 @@ $(document).ready(function () {
         $.ajax({
             type: "POST",
             enctype: 'multipart/form-data',
-            url: "/sorting/proses",
+            url: "${base}proses",
             data: data,
             processData: false,
             contentType: false,
