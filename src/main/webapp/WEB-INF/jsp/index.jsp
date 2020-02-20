@@ -76,7 +76,7 @@ $(document).ready(function () {
 	                	dataString = dataString + data[i].firstName+" "+data[i].lastName+"\n";
 					}
 				}
-            	download(dataString, "data-sorted", "text");
+            	download(dataString, "sorted-names-list", "text");
             },
             error: function (e) {
                 console.log("ERROR : ", e);
