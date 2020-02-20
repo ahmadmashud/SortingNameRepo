@@ -46,14 +46,15 @@ $(document).ready(function () {
 
         var form = $('#uploadForm')[0];
         var file = $('[name=filePath]').val();
-        $("#btnProses").prop('disabled',true);
         var data = new FormData(form);
         
         if (file == "") {
         	alert('Pilih File terlebih dahulu') ;
         	return false;
 		}
-
+	    
+        $("#btnProses").prop('disabled',true);
+	    
         $.ajax({
             type: "POST",
             enctype: 'multipart/form-data',
